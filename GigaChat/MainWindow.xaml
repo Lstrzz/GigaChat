@@ -21,7 +21,7 @@
 
     <Border x:Name="MainBorder" 
             Style="{DynamicResource MainBorder}"
-            CornerRadius="20"
+            CornerRadius="6"
             BorderThickness="2">
         <Grid>
             <Grid.RowDefinitions>
@@ -36,7 +36,6 @@
                 
                 <!--Заголовок-->
             <Border x:Name="TitleBorder" Style="{DynamicResource TitleBorder}"
-                    CornerRadius="20,20,0,0"
                     Grid.ColumnSpan="3"
                     MouseDown="Border_MouseDown"
                     Height="40">
@@ -44,7 +43,7 @@
                     <TextBlock Style="{DynamicResource TitleTextBlock}" 
                                Text="{Binding Title, ElementName=mainWindow}"
                                HorizontalAlignment="Left"
-                               Margin="15,0"
+                               Margin="8,0"
                                VerticalAlignment="Center"
                                FontSize="22"
                                FontWeight="Bold"/>
@@ -53,30 +52,39 @@
                                 Orientation="Horizontal">
 
                         <Button Name="Them" Height="20" Width="20" Click="Them_Click" Background="Black"/>
-                        <Button Name="Them2" Height="20" Width="20" Click="Them2_Click" Background="AliceBlue"/>
+                        <Button Margin="0,0,10,0" Name="Them2" Height="20" Width="20" Click="Them2_Click" Background="AliceBlue"/>
                         <Button x:Name="ButtonMimimize"
                                 Style="{StaticResource MaterialDesignIconButton}" 
-                                Height="40" 
-                                Width="40" 
-                                Click="ButtonMimimize_Click">
+                                Height="25" 
+                                Width="25" 
+                                Click="ButtonMimimize_Click"
+                                Background="LimeGreen">
                             <materialDesign:PackIcon Kind="Minus"
-                                                     Margin="0,13,0,0"/>
+                                                     Height="20" 
+                                                     Width="20"
+                                                     Margin="0,7,0,0"/>
                         </Button>
                         <Button x:Name="ButtonMaximize"
                                 Style="{StaticResource MaterialDesignIconButton}" 
-                                Height="35" 
-                                Width="35" 
-                                Click="ButtonMaximize_Click">
+                                Height="25" 
+                                Width="25"
+                                Margin="5,0"
+                                Click="ButtonMaximize_Click"
+                                Background="Gold">
                             <materialDesign:PackIcon Kind="CheckboxBlankOutline"
-                                                     Height="20" 
-                                                     Width="20"/>
+                                                     Height="17" 
+                                                     Width="17"/>
                         </Button>
                         <Button x:Name="ButtonClose"
                                 Style="{StaticResource MaterialDesignIconButton}" 
-                                Height="40" 
-                                Width="40" 
-                                Click="ButtonClose_Click">
-                            <materialDesign:PackIcon Kind="Close" />
+                                Height="25" 
+                                Width="25" 
+                                Margin="0,0,5,0"
+                                Click="ButtonClose_Click"
+                                Background="Tomato">
+                            <materialDesign:PackIcon Kind="Close" 
+                                                     Height="20" 
+                                                     Width="20"/>
                         </Button>
                     </StackPanel>
                 </Grid>

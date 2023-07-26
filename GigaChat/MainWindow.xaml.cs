@@ -64,8 +64,8 @@ namespace GigaChat
 
             else
             {
-                MainBorder.CornerRadius = new CornerRadius(20);
-                TitleBorder.CornerRadius = new CornerRadius(20, 20, 0, 0);
+                MainBorder.CornerRadius = new CornerRadius(2);
+                TitleBorder.CornerRadius = new CornerRadius(2, 2, 0, 0);
                 WindowState = WindowState.Normal;
             }
         }
