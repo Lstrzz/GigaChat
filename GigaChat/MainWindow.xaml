@@ -5,8 +5,82 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GigaChat"
         mc:Ignorable="d"
-        Title="GigaChat" Height="768" Width="1024">
-    <Grid>
+        x:Name="mainWindow"
+        AllowsTransparency="True"
+        Background="Transparent"
+        FontFamily="Transparent"
+        Height="768" 
+        Width="1250"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
         
-    </Grid>
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        Title="GigaChat">
+
+    <Border x:Name="MainBorder" 
+            Style="{DynamicResource MainBorder}"
+            CornerRadius="20"
+            BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+                
+                <!--Заголовок-->
+            <Border x:Name="TitleBorder" Style="{DynamicResource TitleBorder}"
+                    CornerRadius="20,20,0,0"
+                    Grid.ColumnSpan="3"
+                    MouseDown="Border_MouseDown"
+                    Height="40">
+                <Grid>
+                    <TextBlock Style="{DynamicResource TitleTextBlock}" 
+                               Text="{Binding Title, ElementName=mainWindow}"
+                               HorizontalAlignment="Left"
+                               Margin="15,0"
+                               VerticalAlignment="Center"
+                               FontSize="22"
+                               FontWeight="Bold"/>
+                    <!--Кнопки управления окном-->
+                    <StackPanel HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+
+                        <Button Name="Them" Height="20" Width="20" Click="Them_Click" Background="Black"/>
+                        <Button Name="Them2" Height="20" Width="20" Click="Them2_Click" Background="AliceBlue"/>
+                        <Button x:Name="ButtonMimimize"
+                                Style="{StaticResource MaterialDesignIconButton}" 
+                                Height="40" 
+                                Width="40" 
+                                Click="ButtonMimimize_Click">
+                            <materialDesign:PackIcon Kind="Minus"
+                                                     Margin="0,13,0,0"/>
+                        </Button>
+                        <Button x:Name="ButtonMaximize"
+                                Style="{StaticResource MaterialDesignIconButton}" 
+                                Height="35" 
+                                Width="35" 
+                                Click="ButtonMaximize_Click">
+                            <materialDesign:PackIcon Kind="CheckboxBlankOutline"
+                                                     Height="20" 
+                                                     Width="20"/>
+                        </Button>
+                        <Button x:Name="ButtonClose"
+                                Style="{StaticResource MaterialDesignIconButton}" 
+                                Height="40" 
+                                Width="40" 
+                                Click="ButtonClose_Click">
+                            <materialDesign:PackIcon Kind="Close" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
 </Window>
